@@ -1,0 +1,147 @@
+/* Apple Style Design System */
+:root {
+    --apple-bg: #f5f5f7;
+    --apple-card-bg: #ffffff;
+    --apple-text: #1d1d1f;
+    --apple-text-secondary: #86868b;
+    --apple-blue: #0071e3;
+    --apple-blue-hover: #0077ed;
+    --apple-error-bg: #fff2f4;
+    --apple-error-text: #FF3B30;
+    --input-bg: #e8e8ed; /* Hafif gri input zemini */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box_sizing: border_box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--apple-bg);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Login Container */
+.login-container {
+    background-color: var(--apple-card-bg);
+    padding: 3rem 2.5rem; /* Geniş iç boşluk */
+    border-radius: 20px; /* Yumuşak köşeler */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-header {
+    margin-bottom: 2.5rem;
+}
+
+.login-header h2 {
+    color: var(--apple-text);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.login-header p {
+    color: var(--apple-text-secondary);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* Form Elemanları */
+.form-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: none; /* Apple tarzında genelde placeholder yeterli olur veya floating label */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1.1rem 1rem; /* Daha yüksek input */
+    border: 1px solid transparent; /* Border yerine renk değişimi */
+    background-color: white; /* Input içi beyaz olabilir border varsa, veya gri */
+    background-color: rgba(0,0,0,0.03); /* Çok hafif gri */
+    border-radius: 12px;
+    font-size: 17px;
+    color: var(--apple-text);
+    transition: all 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #86868b;
+}
+
+.form-group input:focus {
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15); /* Focus ring */
+    border-color: var(--apple-blue);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--apple-blue);
+    color: white;
+    border: none;
+    border-radius: 999px; /* Pill shape */
+    font-weight: 500;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.btn-login:hover {
+    background-color: var(--apple-blue-hover);
+    transform: scale(1.01);
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+/* Flash Mesajları */
+.alert {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    font-size: 14px;
+    text-align: center;
+    background-color: var(--apple-error-bg);
+    color: var(--apple-error-text);
+    /* border: 1px solid rgba(255, 59, 48, 0.1); */
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Footer veya ek linkler */
+.footer-text {
+    margin-top: 1.5rem;
+    font-size: 12px;
+    color: #a1a1a6;
+}
